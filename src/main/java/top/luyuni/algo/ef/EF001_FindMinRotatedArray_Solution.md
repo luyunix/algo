@@ -236,8 +236,8 @@ public int findMinWithDuplicates(int[] nums) {
 
 ## 核心区别
 
-| 情况 | 无重复 | 有重复 |
-|------|--------|--------|
-| `nums[mid] > nums[right]` | `left = mid + 1` | `left = mid + 1` |
-| `nums[mid] < nums[right]` | `right = mid` | `right = mid` |
-| `nums[mid] == nums[right]` | 不可能发生 | `right--` |
+| 情况                         | 无重复              | 有重复              |
+|----------------------------|------------------|------------------|
+| `nums[mid] > nums[right]`  | `left = mid + 1` | `left = mid + 1` |
+| `nums[mid] < nums[right]`  | `right = mid`    | `right = mid`    |
+| `nums[mid] == nums[right]` | 不可能发生            | `right--`        |

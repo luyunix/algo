@@ -10,29 +10,29 @@ import java.util.*;
  * ============================================================
  * 【DT009 - 最长公共子序列】双串 DP 经典
  * ============================================================
- *
+ * <p>
  * 题目链接：https://leetcode.cn/problems/longest-common-subsequence/
- *
+ * <p>
  * 题目描述：
  * 给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。
  * 如果不存在公共子序列，返回 0 。
- *
+ * <p>
  * 一个字符串的子序列是指这样一个新的字符串：它是由原字符串在不改变字符的
  * 相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
- *
+ * <p>
  * 例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。
  * 两个字符串的公共子序列是这两个字符串所共同拥有的子序列。
- *
+ * <p>
  * 示例 1：
  * 输入：text1 = "abcde", text2 = "ace"
  * 输出：3
  * 解释：最长公共子序列是 "ace"，它的长度为 3。
- *
+ * <p>
  * 示例 2：
  * 输入：text1 = "abc", text2 = "abc"
  * 输出：3
  * 解释：最长公共子序列是 "abc"，它的长度为 3。
- *
+ * <p>
  * 示例 3：
  * 输入：text1 = "abc", text2 = "def"
  * 输出：0
@@ -64,7 +64,7 @@ public class DT009_LCS {
     /**
      * 使用 oj/core 工具进行评测
      */
- public static void main(String[] args) {
+    public static void main(String[] args) {
         DT009_LCS solution = new DT009_LCS();
 
         // 创建判题引擎，输入是 String[]（两个字符串），输出是 int
@@ -72,21 +72,21 @@ public class DT009_LCS {
 
         // 添加测试用例
         engine
-            .addTestCase("abcde-ace", new String[]{"abcde", "ace"}, 3, "最长公共子序列是 ace")
-            .addTestCase("abc-abc", new String[]{"abc", "abc"}, 3, "完全相同")
-            .addTestCase("abc-def", new String[]{"abc", "def"}, 0, "没有公共子序列")
-            .addTestCase("空字符串", new String[]{"", "abc"}, 0, "一个为空")
-            .addTestCase("都为空", new String[]{"", ""}, 0, "两个都为空")
-            .addTestCase("单字符相同", new String[]{"a", "a"}, 1, "单个相同字符")
-            .addTestCase("单字符不同", new String[]{"a", "b"}, 0, "单个不同字符");
+                .addTestCase("abcde-ace", new String[]{"abcde", "ace"}, 3, "最长公共子序列是 ace")
+                .addTestCase("abc-abc", new String[]{"abc", "abc"}, 3, "完全相同")
+                .addTestCase("abc-def", new String[]{"abc", "def"}, 0, "没有公共子序列")
+                .addTestCase("空字符串", new String[]{"", "abc"}, 0, "一个为空")
+                .addTestCase("都为空", new String[]{"", ""}, 0, "两个都为空")
+                .addTestCase("单字符相同", new String[]{"a", "a"}, 1, "单个相同字符")
+                .addTestCase("单字符不同", new String[]{"a", "b"}, 0, "单个不同字符");
 
         // 执行判题
-      System.out.println("=== 最长公共子序列测试 ===");
-   List<JudgeResult> results = engine.judge(input -> solution.longestCommonSubsequence(input[0], input[1]));
+        System.out.println("=== 最长公共子序列测试 ===");
+        List<JudgeResult> results = engine.judge(input -> solution.longestCommonSubsequence(input[0], input[1]));
         JudgeReporter.printReport(results);
 
         // 统计结果
         boolean allPassed = results.stream().allMatch(JudgeResult::isAccepted);
-      System.exit(allPassed ? 0 : 1);
+        System.exit(allPassed ? 0 : 1);
     }
 }

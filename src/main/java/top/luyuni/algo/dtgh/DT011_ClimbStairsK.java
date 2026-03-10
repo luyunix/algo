@@ -42,7 +42,7 @@ import java.util.*;
 public class DT011_ClimbStairsK {
 
     // 方法 1：基础 DP
-  public int climbStairsK(int N, int K) {
+    public int climbStairsK(int N, int K) {
         int[] dp = new int[N + 1];
 
         dp[0] = 1;
@@ -57,7 +57,7 @@ public class DT011_ClimbStairsK {
     }
 
     // 方法 2：空间优化（滑动窗口）
-  public int climbStairsKOptimized(int N, int K) {
+    public int climbStairsKOptimized(int N, int K) {
         if (N == 0) return 1;
         int[] dp = new int[N + 1];
         dp[0] = 1;
@@ -77,7 +77,7 @@ public class DT011_ClimbStairsK {
     }
 
     // 方法 3：给定步长集合的版本
-  public int climbStairsWithSet(int N, int[] steps) {
+    public int climbStairsWithSet(int N, int[] steps) {
         int[] dp = new int[N + 1];
         dp[0] = 1;
 

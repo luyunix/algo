@@ -8,19 +8,19 @@ import java.util.*;
 
 /**
  * LB008 - 奇偶链表
- *
+ * <p>
  * 题目描述：
  * 给定单链表的头节点 head ，将所有索引为奇数的节点和索引为偶数的节点分别组合在一起，
  * 然后返回重新排序的列表。
  * 第一个节点的索引被认为是奇数，第二个节点的索引为偶数，以此类推。
- *
+ * <p>
  * 示例：
  * 输入：head = [1,2,3,4,5]
  * 输出：[1,3,5,2,4]
- *
+ * <p>
  * 输入：head = [2,1,3,5,6,4,7]
  * 输出：[2,3,6,7,1,5,4]
- *
+ * <p>
  * 核心技巧：双指针分组
  * - odd指针连接奇数索引节点
  * - even指针连接偶数索引节点
@@ -32,7 +32,10 @@ public class LB008_OddEvenList {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode(int val) { this.val = val; }
+
+        ListNode(int val) {
+            this.val = val;
+        }
     }
 
     /**

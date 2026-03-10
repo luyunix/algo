@@ -75,6 +75,7 @@ dp[i]初始化为INF（表示暂时无法凑成）
 ```
 
 通用公式：
+
 ```
 dp[i] = min(dp[i-coin] + 1) for all coin in coins
 ```
@@ -215,6 +216,7 @@ dp = [0, 1, 1, 2, 2, 1]
 ## 边界 Case
 
 **Case 1: 无法凑成**
+
 ```
 coins = [2], amount = 3
 
@@ -229,11 +231,13 @@ i=3: 3 >= 2 ✓
 ```
 
 **Case 2: amount = 0**
+
 ```
 直接返回 0
 ```
 
 **Case 3: 只有1种硬币**
+
 ```
 coins = [1], amount = 5
 
@@ -245,12 +249,12 @@ dp[1]=1, dp[2]=2, dp[3]=3, dp[4]=4, dp[5]=5
 
 ## DP 四步法
 
-| 步骤 | 内容 | 本题 |
-|------|------|------|
-| 1. 定义状态 | dp[i] 表示什么 | dp[i] = 凑成金额 i 所需的最少硬币数 |
-| 2. 状态转移 | dp[i] 怎么算 | dp[i] = min(dp[i-coin] + 1) 对所有 coin |
-| 3. 初始条件 | dp[0], 其他值 | dp[0]=0, 其他=INF |
-| 4. 遍历顺序 | 从哪到哪 | 从 1 到 amount |
+| 步骤      | 内容         | 本题                                   |
+|---------|------------|--------------------------------------|
+| 1. 定义状态 | dp[i] 表示什么 | dp[i] = 凑成金额 i 所需的最少硬币数              |
+| 2. 状态转移 | dp[i] 怎么算  | dp[i] = min(dp[i-coin] + 1) 对所有 coin |
+| 3. 初始条件 | dp[0], 其他值 | dp[0]=0, 其他=INF                      |
+| 4. 遍历顺序 | 从哪到哪       | 从 1 到 amount                         |
 
 ---
 
@@ -266,14 +270,15 @@ int[] dp = new int[amount + 1];  // 默认全是0
 ```
 
 **正确做法**：
+
 ```java
-Arrays.fill(dp, amount + 1);  // INF = amount + 1
+Arrays.fill(dp, amount +1);  // INF = amount + 1
 ```
 
 ### 2. 如何判断无解？
 
 ```java
-return dp[amount] > amount ? -1 : dp[amount];
+return dp[amount]>amount ?-1:dp[amount];
 ```
 
 如果 `dp[amount]` 还是初始值 `amount+1`，说明没有任何组合能凑成。

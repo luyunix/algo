@@ -10,18 +10,18 @@ import java.util.*;
  * ============================================================
  * 【LB001 - 反转链表】
  * ============================================================
- *
+ * <p>
  * 题目描述：
  * 给你单链表的头节点 head，请你反转链表，并返回反转后的链表。
- *
+ * <p>
  * 示例 1：
  * 输入：head = [1,2,3,4,5]
  * 输出：[5,4,3,2,1]
- *
+ * <p>
  * 示例 2：
  * 输入：head = [1,2]
  * 输出：[2,1]
- *
+ * <p>
  * 示例 3：
  * 输入：head = []
  * 输出：[]
@@ -183,26 +183,26 @@ public class LB001_ReverseList {
 
         // 添加测试用例
         engine
-            .addTestCase("示例1：5个节点",
-                new int[]{1, 2, 3, 4, 5},
-                new int[]{5, 4, 3, 2, 1},
-                "基本功能测试")
-            .addTestCase("示例2：2个节点",
-                new int[]{1, 2},
-                new int[]{2, 1},
-                "两个节点反转")
-            .addTestCase("示例3：空链表",
-                new int[]{},
-                new int[]{},
-                "边界情况：空链表")
-            .addTestCase("单个节点",
-                new int[]{1},
-                new int[]{1},
-                "边界情况：单个节点")
-            .addTestCase("两个相同节点",
-                new int[]{1, 1},
-                new int[]{1, 1},
-                "相同值节点");
+                .addTestCase("示例1：5个节点",
+                        new int[]{1, 2, 3, 4, 5},
+                        new int[]{5, 4, 3, 2, 1},
+                        "基本功能测试")
+                .addTestCase("示例2：2个节点",
+                        new int[]{1, 2},
+                        new int[]{2, 1},
+                        "两个节点反转")
+                .addTestCase("示例3：空链表",
+                        new int[]{},
+                        new int[]{},
+                        "边界情况：空链表")
+                .addTestCase("单个节点",
+                        new int[]{1},
+                        new int[]{1},
+                        "边界情况：单个节点")
+                .addTestCase("两个相同节点",
+                        new int[]{1, 1},
+                        new int[]{1, 1},
+                        "相同值节点");
 
         // 执行判题 - 迭代方法
         System.out.println("=== 迭代方法测试 ===");
@@ -233,8 +233,8 @@ public class LB001_ReverseList {
 
         // 统计结果
         boolean allPassed = results1.stream().allMatch(JudgeResult::isAccepted)
-            && results2.stream().allMatch(JudgeResult::isAccepted)
-            && results3.stream().allMatch(JudgeResult::isAccepted);
+                && results2.stream().allMatch(JudgeResult::isAccepted)
+                && results3.stream().allMatch(JudgeResult::isAccepted);
 
         System.exit(allPassed ? 0 : 1);
     }

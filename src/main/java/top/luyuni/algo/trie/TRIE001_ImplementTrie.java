@@ -22,12 +22,16 @@ public class TRIE001_ImplementTrie {
 
     private TrieNode root;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public TRIE001_ImplementTrie() {
         root = new TrieNode();
     }
 
-    /** Inserts a word into the trie. */
+    /**
+     * Inserts a word into the trie.
+     */
     public void insert(String word) {
         TrieNode node = root;
         for (char c : word.toCharArray()) {
@@ -40,13 +44,17 @@ public class TRIE001_ImplementTrie {
         node.isEnd = true;
     }
 
-    /** Returns if the word is in the trie. */
+    /**
+     * Returns if the word is in the trie.
+     */
     public boolean search(String word) {
         TrieNode node = searchPrefix(word);
         return node != null && node.isEnd;
     }
 
-    /** Returns if there is any word in the trie that starts with the given prefix. */
+    /**
+     * Returns if there is any word in the trie that starts with the given prefix.
+     */
     public boolean startsWith(String prefix) {
         return searchPrefix(prefix) != null;
     }
@@ -77,9 +85,9 @@ public class TRIE001_ImplementTrie {
 
         // 添加测试用例
         engine.addTestCase("示例",
-            new String[]{"insert(apple)", "search(apple)", "search(app)", "startsWith(app)", "insert(app)", "search(app)"},
-            new Object[]{null, true, false, true, null, true},
-            "Trie 前缀树基本功能");
+                new String[]{"insert(apple)", "search(apple)", "search(app)", "startsWith(app)", "insert(app)", "search(app)"},
+                new Object[]{null, true, false, true, null, true},
+                "Trie 前缀树基本功能");
 
         // 执行判题
         List<JudgeResult> results = engine.judge(operations -> {

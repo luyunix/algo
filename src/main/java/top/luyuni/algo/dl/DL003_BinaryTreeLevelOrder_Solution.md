@@ -186,12 +186,14 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 ## 边界 Case
 
 **Case 1: 空树**
+
 ```
 root = null
 直接返回空列表 [] ✓
 ```
 
 **Case 2: 只有根节点**
+
 ```
     1
 
@@ -201,6 +203,7 @@ root = null
 ```
 
 **Case 3: 只有左子树**
+
 ```
     1
    /
@@ -215,6 +218,7 @@ root = null
 ```
 
 **Case 4: 只有右子树**
+
 ```
 1
  \
@@ -229,6 +233,7 @@ root = null
 ```
 
 **Case 5: 满二叉树**
+
 ```
     1
    / \

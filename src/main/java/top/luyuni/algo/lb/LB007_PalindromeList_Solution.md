@@ -246,24 +246,28 @@ while (fast.next != null && fast.next.next != null)
 ## 边界 Case
 
 **Case 1: 空链表**
+
 ```
 head = null
 返回true ✓
 ```
 
 **Case 2: 单个节点**
+
 ```
 1
 返回true ✓
 ```
 
 **Case 3: 两个节点相同**
+
 ```
 1 → 1
 是回文 ✓
 ```
 
 **Case 4: 两个节点不同**
+
 ```
 1 → 2
 不是回文 ✗

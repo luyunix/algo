@@ -118,6 +118,7 @@ slow.next = slow.next.next
 ## 边界 Case
 
 **Case 1: 删除唯一节点**
+
 ```
 head = [1], n = 1
 快指针走2步直接到null
@@ -126,6 +127,7 @@ slow指向dummy，删除dummy.next
 ```
 
 **Case 2: 删除头节点**
+
 ```
 head = [1,2,3], n = 3
 快指针走4步到null
@@ -134,6 +136,7 @@ slow指向dummy，删除dummy.next（即1）
 ```
 
 **Case 3: 删除尾节点**
+
 ```
 head = [1,2], n = 1
 快指针走2步到null

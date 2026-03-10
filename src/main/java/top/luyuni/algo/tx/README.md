@@ -5,6 +5,7 @@
 ## 为什么学贪心？
 
 贪心算法是解决「最优选择」问题的高效方法：
+
 - 区间调度问题（会议安排）
 - 跳跃游戏
 - 分发糖果
@@ -224,18 +225,18 @@ i=1: nums[1]=3, maxReach=max(2, 1+3)=4
 
 ## 当前内容
 
-| 文件 | 题目 | 难度 | 核心技巧 |
-|------|------|------|----------|
-| `TX001_AssignCookies.java` | 分发饼干 | 简单 | 排序+贪心 |
-| `TX002_BestTimeToBuyStockII.java` | 股票买卖 II | 简单 | 累加所有上涨 |
-| `TX003_JumpGame.java` | 跳跃游戏 | 中等 | 维护最远可达 |
-| `TX004_JumpGameII.java` | 跳跃游戏 II | 中等 | 贪心找最远距离 |
-| `TX005_Candy.java` | 分发糖果 | 困难 | 左右两遍贪心 |
-| `TX006_QueueReconstruction.java` | 根据身高重建队列 | 中等 | 排序+插入 |
-| `TX007_NonOverlappingIntervals.java` | 无重叠区间 | 中等 | 按结束时间排序 |
-| `TX008_MergeIntervals.java` | 合并区间 | 中等 | 排序+贪心合并 |
-| `TX009_MinimumNumberOfArrows.java` | 用最少数量的箭引爆气球 | 中等 | 区间贪心 |
-| `TX010_PartitionLabels.java` | 划分字母区间 | 中等 | 贪心划分 |
+| 文件                                   | 题目          | 难度 | 核心技巧    |
+|--------------------------------------|-------------|----|---------|
+| `TX001_AssignCookies.java`           | 分发饼干        | 简单 | 排序+贪心   |
+| `TX002_BestTimeToBuyStockII.java`    | 股票买卖 II     | 简单 | 累加所有上涨  |
+| `TX003_JumpGame.java`                | 跳跃游戏        | 中等 | 维护最远可达  |
+| `TX004_JumpGameII.java`              | 跳跃游戏 II     | 中等 | 贪心找最远距离 |
+| `TX005_Candy.java`                   | 分发糖果        | 困难 | 左右两遍贪心  |
+| `TX006_QueueReconstruction.java`     | 根据身高重建队列    | 中等 | 排序+插入   |
+| `TX007_NonOverlappingIntervals.java` | 无重叠区间       | 中等 | 按结束时间排序 |
+| `TX008_MergeIntervals.java`          | 合并区间        | 中等 | 排序+贪心合并 |
+| `TX009_MinimumNumberOfArrows.java`   | 用最少数量的箭引爆气球 | 中等 | 区间贪心    |
+| `TX010_PartitionLabels.java`         | 划分字母区间      | 中等 | 贪心划分    |
 
 ## 贪心学习建议
 

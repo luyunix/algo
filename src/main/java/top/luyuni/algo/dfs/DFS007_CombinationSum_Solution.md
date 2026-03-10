@@ -208,6 +208,7 @@ i=3: 选择7，path=[7], sum=7
 ## 边界 Case
 
 **Case 1: 无解**
+
 ```
 candidates = [2,4], target = 3
 2和4都是偶数，无法凑出奇数3
@@ -215,18 +216,21 @@ candidates = [2,4], target = 3
 ```
 
 **Case 2: target等于某个元素**
+
 ```
 candidates = [2,3,5], target = 5
 返回[[5], [2,3]] ✓
 ```
 
 **Case 3: 需要多次选择同一个元素**
+
 ```
 candidates = [2], target = 4
 返回[[2,2]] ✓
 ```
 
 **Case 4: 空数组**
+
 ```
 candidates = [], target = 1
 返回[] ✓

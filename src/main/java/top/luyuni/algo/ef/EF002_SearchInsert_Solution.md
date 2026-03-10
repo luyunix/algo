@@ -141,10 +141,10 @@ public int searchInsert(int[] nums, int target) {
 
 ## 为什么 right = nums.length？
 
-| right 取值 | 能否处理 target 比所有元素大 |
-|-----------|---------------------------|
-| nums.length - 1 | ❌ 不能，最大只能返回 nums.length-1 |
-| nums.length | ✓ 能，可以返回 nums.length（插入末尾）|
+| right 取值        | 能否处理 target 比所有元素大         |
+|-----------------|----------------------------|
+| nums.length - 1 | ❌ 不能，最大只能返回 nums.length-1  |
+| nums.length     | ✓ 能，可以返回 nums.length（插入末尾） |
 
 ## 总结
 

@@ -300,12 +300,14 @@ A.random = B
 ## 边界 Case
 
 **Case 1: 空链表**
+
 ```
 head = null
 返回null ✓
 ```
 
 **Case 2: 单个节点，random指向自己**
+
 ```
 1 → null
 ↓
@@ -318,11 +320,13 @@ head = null
 ```
 
 **Case 3: 所有random都是null**
+
 ```
 正常复制，所有新节点random=null ✓
 ```
 
 **Case 4: random形成环**
+
 ```
 A.random = B
 B.random = A

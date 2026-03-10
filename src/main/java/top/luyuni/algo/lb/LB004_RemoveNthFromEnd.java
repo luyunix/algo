@@ -8,20 +8,20 @@ import java.util.*;
 
 /**
  * LB004 - 删除链表的倒数第 N 个结点
- *
+ * <p>
  * 题目描述：
  * 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
- *
+ * <p>
  * 示例：
  * 输入：head = [1,2,3,4,5], n = 2
  * 输出：[1,2,3,5]
- *
+ * <p>
  * 输入：head = [1], n = 1
  * 输出：[]
- *
+ * <p>
  * 输入：head = [1,2], n = 1
  * 输出：[1]
- *
+ * <p>
  * 核心技巧：快慢指针
  * - 快指针先走n步
  * - 然后快慢指针一起走
@@ -33,7 +33,10 @@ public class LB004_RemoveNthFromEnd {
     public static class ListNode {
         int val;
         ListNode next;
-         public ListNode(int val) { this.val = val; }
+
+        public ListNode(int val) {
+            this.val = val;
+        }
     }
 
     /**
@@ -41,30 +44,30 @@ public class LB004_RemoveNthFromEnd {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
-   public ListNode removeNthFromEnd(ListNode head, int n) {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         // 创建虚拟头节点，简化边界处理
-       ListNode dummy = new ListNode(0);
-       dummy.next = head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
 
-       // 快慢指针
-      ListNode fast = dummy;
-      ListNode slow = dummy;
+        // 快慢指针
+        ListNode fast = dummy;
+        ListNode slow = dummy;
 
         // 快指针先走 n+1 步
-      for (int i = 0; i <= n; i++) {
-         fast = fast.next;
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
         }
 
-       // 快慢指针一起走，直到快指针到达末尾
-      while (fast != null) {
-         fast = fast.next;
-         slow = slow.next;
+        // 快慢指针一起走，直到快指针到达末尾
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
 
-       // 删除倒数第 n 个节点
-      slow.next = slow.next.next;
+        // 删除倒数第 n 个节点
+        slow.next = slow.next.next;
 
-     return dummy.next;
+        return dummy.next;
     }
 
     /**
@@ -105,31 +108,31 @@ public class LB004_RemoveNthFromEnd {
 
         // 添加测试用例
         engine
-            .addTestCase("正常删除",
-                new TestInput(createList(new int[]{1, 2, 3, 4, 5}), 2),
-                createList(new int[]{1, 2, 3, 5}),
-                "基本功能测试",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("删除唯一节点",
-                new TestInput(createList(new int[]{1}), 1),
-                null,
-                "边界情况：单个节点",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("删除最后一个",
-                new TestInput(createList(new int[]{1, 2}), 1),
-                createList(new int[]{1}),
-                "边界情况：删除末尾",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("删除第一个",
-                new TestInput(createList(new int[]{1, 2, 3}), 3),
-                createList(new int[]{2, 3}),
-                "边界情况：删除头部",
-                (expected, actual) -> listEquals(expected, actual));
+                .addTestCase("正常删除",
+                        new TestInput(createList(new int[]{1, 2, 3, 4, 5}), 2),
+                        createList(new int[]{1, 2, 3, 5}),
+                        "基本功能测试",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("删除唯一节点",
+                        new TestInput(createList(new int[]{1}), 1),
+                        null,
+                        "边界情况：单个节点",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("删除最后一个",
+                        new TestInput(createList(new int[]{1, 2}), 1),
+                        createList(new int[]{1}),
+                        "边界情况：删除末尾",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("删除第一个",
+                        new TestInput(createList(new int[]{1, 2, 3}), 3),
+                        createList(new int[]{2, 3}),
+                        "边界情况：删除头部",
+                        (expected, actual) -> listEquals(expected, actual));
 
         // 执行判题
         System.out.println("=== 快慢指针法测试 ===");
         List<JudgeResult> results = engine.judge(input ->
-            solution.removeNthFromEnd(input.head, input.n)
+                solution.removeNthFromEnd(input.head, input.n)
         );
         JudgeReporter.printReport(results);
 
@@ -142,6 +145,7 @@ public class LB004_RemoveNthFromEnd {
     static class TestInput {
         ListNode head;
         int n;
+
         TestInput(ListNode head, int n) {
             this.head = head;
             this.n = n;

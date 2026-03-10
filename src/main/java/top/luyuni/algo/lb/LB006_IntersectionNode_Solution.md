@@ -225,18 +225,21 @@ ptrB: 4 → 5 → null → 1 → 2 → 3 → null
 ## 边界 Case
 
 **Case 1: 一个链表为空**
+
 ```
 headA = null
 直接返回null ✓
 ```
 
 **Case 2: 两个链表都不相交**
+
 ```
 都走完，最后ptrA=ptrB=null
 返回null ✓
 ```
 
 **Case 3: 交点在链表头**
+
 ```
 listA和listB从同一个节点开始
 ptrA和ptrB一开始就相等
@@ -244,6 +247,7 @@ ptrA和ptrB一开始就相等
 ```
 
 **Case 4: 交点在链表尾**
+
 ```
 最后一个节点是交点
 两个指针会在最后一个节点相遇 ✓

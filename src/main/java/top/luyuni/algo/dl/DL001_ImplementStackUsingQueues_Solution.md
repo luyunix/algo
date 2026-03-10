@@ -180,6 +180,7 @@ class MyStack {
 ## 边界 Case
 
 **Case 1: 连续push后连续pop**
+
 ```
 push(1), push(2), push(3)
 pop(), pop(), pop()
@@ -193,6 +194,7 @@ pop3: 直接弹出1
 ```
 
 **Case 2: push和pop交替**
+
 ```
 push(1), pop(), push(2), top()
 
@@ -203,6 +205,7 @@ top(): 返回2 ✓
 ```
 
 **Case 3: 空栈操作**
+
 ```
 empty() → true
 top() 或 pop() 应该抛出异常或返回特定值

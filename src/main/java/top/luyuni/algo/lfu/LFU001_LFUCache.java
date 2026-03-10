@@ -153,9 +153,9 @@ public class LFU001_LFUCache {
 
         // 添加测试用例
         engine.addTestCase("示例",
-            new String[]{"put(1,1)", "put(2,2)", "get(1)", "put(3,3)", "get(2)", "get(3)", "put(4,4)", "get(1)", "get(3)", "get(4)"},
-            new Object[]{null, null, 1, null, -1, 3, null, -1, 3, 4},
-            "LFU 缓存基本功能");
+                new String[]{"put(1,1)", "put(2,2)", "get(1)", "put(3,3)", "get(2)", "get(3)", "put(4,4)", "get(1)", "get(3)", "get(4)"},
+                new Object[]{null, null, 1, null, -1, 3, null, -1, 3, 4},
+                "LFU 缓存基本功能");
 
         // 执行判题
         List<JudgeResult> results = engine.judge(operations -> {

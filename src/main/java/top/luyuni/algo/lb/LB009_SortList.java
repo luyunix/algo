@@ -8,17 +8,17 @@ import java.util.*;
 
 /**
  * LB009 - 排序链表
- *
+ * <p>
  * 题目描述：
  * 给你链表的头结点 head ，请将其按升序排列并返回排序后的链表。
- *
+ * <p>
  * 示例：
  * 输入：head = [4,2,1,3]
  * 输出：[1,2,3,4]
- *
+ * <p>
  * 输入：head = [-1,5,3,4,0]
  * 输出：[-1,0,3,4,5]
- *
+ * <p>
  * 核心技巧：归并排序
  * 1. 快慢指针找中点，将链表分成两半
  * 2. 递归排序左右两部分
@@ -29,8 +29,11 @@ public class LB009_SortList {
     // 链表节点定义
     public static class ListNode {
         int val;
-       ListNode next;
-        public ListNode(int val) { this.val = val; }
+        ListNode next;
+
+        public ListNode(int val) {
+            this.val = val;
+        }
     }
 
     /**
@@ -43,35 +46,35 @@ public class LB009_SortList {
         if (head == null || head.next == null) return head;
 
         // 1. 快慢指针找中点
-       ListNode slow = head;
-       ListNode fast = head;
-       ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
+        ListNode prev = null;
 
-        while(fast != null && fast.next != null) {
-           prev = slow;
+        while (fast != null && fast.next != null) {
+            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
 
         // 断开链表
         if (prev != null) {
-           prev.next = null;
+            prev.next = null;
         }
 
         // 2. 递归排序左右两部分
-       ListNode left = sortList(head);
-       ListNode right = sortList(slow);
+        ListNode left = sortList(head);
+        ListNode right = sortList(slow);
 
         // 3. 合并两个有序链表
-       return merge(left, right);
+        return merge(left, right);
     }
 
     // 辅助方法：合并两个有序链表
-   private ListNode merge(ListNode l1, ListNode l2) {
-       ListNode dummy = new ListNode(0);
-       ListNode curr = dummy;
+    private ListNode merge(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
 
-        while(l1 != null && l2 != null) {
+        while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 curr.next = l1;
                 l1 = l1.next;
@@ -89,7 +92,7 @@ public class LB009_SortList {
             curr.next = l2;
         }
 
-       return dummy.next;
+        return dummy.next;
     }
 
     /**
@@ -97,7 +100,7 @@ public class LB009_SortList {
      */
     public ListNode sortListBottomUp(ListNode head) {
         // TODO: 请实现此方法（可选）
-       return null;
+        return null;
     }
 
     public static void main(String[] args) {
@@ -108,34 +111,34 @@ public class LB009_SortList {
 
         // 添加测试用例
         engine.addTestCase("正常排序",
-                new TestInput(createList(new int[]{4,2,1,3})),
-                createList(new int[]{1,2,3,4}),
-                "基本功能测试",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("有负数",
-                new TestInput(createList(new int[]{-1,5,3,4,0})),
-                createList(new int[]{-1,0,3,4,5}),
-                "包含负数",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("空链表",
-                new TestInput(null),
-                null,
-                "边界情况：空链表")
-            .addTestCase("单个节点",
-                new TestInput(createList(new int[]{1})),
-                createList(new int[]{1}),
-                "边界情况：单个节点",
-                (expected, actual) -> listEquals(expected, actual))
-            .addTestCase("已经有序",
-                new TestInput(createList(new int[]{1,2,3,4,5})),
-                createList(new int[]{1,2,3,4,5}),
-                "边界情况：已经有序",
-                (expected, actual) -> listEquals(expected, actual));
+                        new TestInput(createList(new int[]{4, 2, 1, 3})),
+                        createList(new int[]{1, 2, 3, 4}),
+                        "基本功能测试",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("有负数",
+                        new TestInput(createList(new int[]{-1, 5, 3, 4, 0})),
+                        createList(new int[]{-1, 0, 3, 4, 5}),
+                        "包含负数",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("空链表",
+                        new TestInput(null),
+                        null,
+                        "边界情况：空链表")
+                .addTestCase("单个节点",
+                        new TestInput(createList(new int[]{1})),
+                        createList(new int[]{1}),
+                        "边界情况：单个节点",
+                        (expected, actual) -> listEquals(expected, actual))
+                .addTestCase("已经有序",
+                        new TestInput(createList(new int[]{1, 2, 3, 4, 5})),
+                        createList(new int[]{1, 2, 3, 4, 5}),
+                        "边界情况：已经有序",
+                        (expected, actual) -> listEquals(expected, actual));
 
         // 执行判题
         System.out.println("=== 归并排序测试 ===");
-       List<JudgeResult> results = engine.judge(input ->
-            solution.sortList(input.head)
+        List<JudgeResult> results = engine.judge(input ->
+                solution.sortList(input.head)
         );
         JudgeReporter.printReport(results);
 
@@ -145,31 +148,32 @@ public class LB009_SortList {
     }
 
     // 辅助方法：比较两个链表是否相等
-   private static boolean listEquals(ListNode l1, ListNode l2) {
-        while(l1 != null && l2 != null) {
+    private static boolean listEquals(ListNode l1, ListNode l2) {
+        while (l1 != null && l2 != null) {
             if (l1.val != l2.val) return false;
             l1 = l1.next;
             l2 = l2.next;
         }
-       return l1 == null && l2 == null;
+        return l1 == null && l2 == null;
     }
 
     // 辅助方法：从数组创建链表
-   private static ListNode createList(int[] arr) {
+    private static ListNode createList(int[] arr) {
         if (arr == null || arr.length == 0) return null;
-       ListNode dummy = new ListNode(0);
-       ListNode curr = dummy;
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
         for (int val : arr) {
             curr.next = new ListNode(val);
             curr = curr.next;
         }
-       return dummy.next;
+        return dummy.next;
     }
 
     // 测试输入类
-   static class TestInput {
-       ListNode head;
-       TestInput(ListNode head) {
+    static class TestInput {
+        ListNode head;
+
+        TestInput(ListNode head) {
             this.head = head;
         }
     }

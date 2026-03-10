@@ -5,6 +5,7 @@
 ## 为什么学DFS？
 
 DFS是解决「遍历/搜索所有可能」的神器：
+
 - 二叉树的遍历（前序、中序、后序）
 - 图的遍历（连通分量、路径搜索）
 - 排列组合问题（全排列、子集）
@@ -285,18 +286,18 @@ void dfs(路径, 选择列表) {
 
 ## 当前内容
 
-| 文件 | 题目 | 难度 | 核心技巧 |
-|------|------|------|----------|
-| `DFS001_MaxDepthOfBinaryTree.java` | 二叉树的最大深度 | 入门 | 递归DFS |
-| `DFS002_PathSum.java` | 路径总和 | 入门 | DFS + 路径记录 |
-| `DFS003_NumberOfIslands.java` | 岛屿数量 | 入门 | 网格DFS |
-| `DFS004_MaxAreaOfIsland.java` | 岛屿的最大面积 | 中等 | 网格DFS |
-| `DFS005_Permutations.java` | 全排列 | 中等 | DFS + 回溯 |
-| `DFS006_Subsets.java` | 子集 | 中等 | DFS + 回溯 |
-| `DFS007_CombinationSum.java` | 组合总和 | 中等 | DFS + 剪枝 |
-| `DFS008_SolveNQueens.java` | N皇后 | 困难 | DFS + 剪枝 |
-| `DFS009_CourseSchedule.java` | 课程表 | 中等 | 拓扑排序（DFS） |
-| `DFS010_PacificAtlantic.java` | 太平洋大西洋水流问题 | 中等 | 多源DFS |
+| 文件                                 | 题目         | 难度 | 核心技巧       |
+|------------------------------------|------------|----|------------|
+| `DFS001_MaxDepthOfBinaryTree.java` | 二叉树的最大深度   | 入门 | 递归DFS      |
+| `DFS002_PathSum.java`              | 路径总和       | 入门 | DFS + 路径记录 |
+| `DFS003_NumberOfIslands.java`      | 岛屿数量       | 入门 | 网格DFS      |
+| `DFS004_MaxAreaOfIsland.java`      | 岛屿的最大面积    | 中等 | 网格DFS      |
+| `DFS005_Permutations.java`         | 全排列        | 中等 | DFS + 回溯   |
+| `DFS006_Subsets.java`              | 子集         | 中等 | DFS + 回溯   |
+| `DFS007_CombinationSum.java`       | 组合总和       | 中等 | DFS + 剪枝   |
+| `DFS008_SolveNQueens.java`         | N皇后        | 困难 | DFS + 剪枝   |
+| `DFS009_CourseSchedule.java`       | 课程表        | 中等 | 拓扑排序（DFS）  |
+| `DFS010_PacificAtlantic.java`      | 太平洋大西洋水流问题 | 中等 | 多源DFS      |
 
 ## DFS学习建议
 

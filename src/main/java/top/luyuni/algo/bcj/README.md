@@ -5,16 +5,17 @@
 ## 什么是并查集？
 
 并查集是一种处理**不相交集合**的数据结构，支持两种操作：
+
 - **Find**：查找元素属于哪个集合（找根）
 - **Union**：合并两个集合
 
 ## 为什么学并查集？
 
-| 优势 | 说明 |
-|------|------|
-| 时间复杂度低 | 近乎 O(1) 的查询和合并 |
-| 代码简洁 | 核心代码不到20行 |
-| 应用广泛 | 连通分量、最小生成树、最近公共祖先等 |
+| 优势     | 说明                 |
+|--------|--------------------|
+| 时间复杂度低 | 近乎 O(1) 的查询和合并     |
+| 代码简洁   | 核心代码不到20行          |
+| 应用广泛   | 连通分量、最小生成树、最近公共祖先等 |
 
 ## 核心模板
 
@@ -22,7 +23,7 @@
 class UnionFind {
     int[] parent;  // parent[i] = i的父节点
     int[] rank;    // rank[i] = i所在树的高度（用于优化）
-    
+
     public UnionFind(int n) {
         parent = new int[n];
         rank = new int[n];
@@ -31,7 +32,7 @@ class UnionFind {
             rank[i] = 1;
         }
     }
-    
+
     // 查找根节点（带路径压缩）
     public int find(int x) {
         if (parent[x] != x) {
@@ -39,12 +40,12 @@ class UnionFind {
         }
         return parent[x];
     }
-    
+
     // 合并两个集合（按秩合并）
     public void union(int x, int y) {
         int px = find(x), py = find(y);
         if (px == py) return;  // 已经在同一集合
-        
+
         // 小树挂在大树下
         if (rank[px] < rank[py]) {
             parent[px] = py;
@@ -55,7 +56,7 @@ class UnionFind {
             rank[px]++;
         }
     }
-    
+
     // 判断是否连通
     public boolean connected(int x, int y) {
         return find(x) == find(y);
@@ -155,6 +156,7 @@ find(3)过程：
 
 parent: [0, 0, 0, 0, 4]
 ```
+
 ```
 
 ## 两种优化

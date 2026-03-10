@@ -20,7 +20,7 @@ public class JudgeEngine<Input, Output> {
     }
 
     public JudgeEngine<Input, Output> addTestCase(String name, Input input, Output expected, String description,
-                                                   BiPredicate<Output, Output> customEquals) {
+                                                  BiPredicate<Output, Output> customEquals) {
         testCases.add(new TestCase<>(name, input, expected, description, customEquals));
         return this;
     }
@@ -75,13 +75,13 @@ public class JudgeEngine<Input, Output> {
 
             @SuppressWarnings("unchecked")
             Output result = (Output) actualOutput[0];
-           if (equalsOutput(tc.getExpectedOutput(), result, tc.getCustomEquals())) {
+            if (equalsOutput(tc.getExpectedOutput(), result, tc.getCustomEquals())) {
                 return new JudgeResult(JudgeResult.Status.AC, "Accepted", elapsed, tc.getName(),
-                    originalInput, tc.getExpectedOutput(), result);
+                        originalInput, tc.getExpectedOutput(), result);
             } else {
                 return JudgeResult.wa(tc.getName(), originalInput,
-                    formatOutput(tc.getExpectedOutput()),
-                    formatOutput(result));
+                        formatOutput(tc.getExpectedOutput()),
+                        formatOutput(result));
             }
 
         } catch (Exception e) {
@@ -165,67 +165,67 @@ public class JudgeEngine<Input, Output> {
      * 深拷贝输入对象（主要用于保存链表等可变对象的原始状态）
      */
     @SuppressWarnings("unchecked")
-   private Input cloneInput(Input input) {
-      if (input == null) return null;
+    private Input cloneInput(Input input) {
+        if (input == null) return null;
 
         String className = input.getClass().getName();
 
         // 处理 TestInput 类型
-      if (className.contains("TestInput")) {
+        if (className.contains("TestInput")) {
             try {
                 // 获取所有字段
-               java.lang.reflect.Field[] fields = input.getClass().getDeclaredFields();
-             Object[] clonedValues = new Object[fields.length];
+                java.lang.reflect.Field[] fields = input.getClass().getDeclaredFields();
+                Object[] clonedValues = new Object[fields.length];
 
                 // 克隆每个字段
-              for (int i = 0; i < fields.length; i++) {
-                  fields[i].setAccessible(true);
-                Object value = fields[i].get(input);
+                for (int i = 0; i < fields.length; i++) {
+                    fields[i].setAccessible(true);
+                    Object value = fields[i].get(input);
 
-                  // 如果是 ListNode 类型，进行深拷贝
-               if (value != null && isListNode(value)) {
-                     clonedValues[i] = cloneListNode(value);
-                 } else {
-                     // 其他类型直接复制引用
-                    clonedValues[i] = value;
-                 }
-              }
+                    // 如果是 ListNode 类型，进行深拷贝
+                    if (value != null && isListNode(value)) {
+                        clonedValues[i] = cloneListNode(value);
+                    } else {
+                        // 其他类型直接复制引用
+                        clonedValues[i] = value;
+                    }
+                }
 
                 // 找到匹配的构造函数
-               java.lang.reflect.Constructor<?>[] constructors = input.getClass().getDeclaredConstructors();
-               java.lang.reflect.Constructor<?> targetConstructor = null;
-               for (java.lang.reflect.Constructor<?> c : constructors) {
-                if (c.getParameterCount() == fields.length) {
-                       targetConstructor = c;
-                       break;
-                   }
-               }
+                java.lang.reflect.Constructor<?>[] constructors = input.getClass().getDeclaredConstructors();
+                java.lang.reflect.Constructor<?> targetConstructor = null;
+                for (java.lang.reflect.Constructor<?> c : constructors) {
+                    if (c.getParameterCount() == fields.length) {
+                        targetConstructor = c;
+                        break;
+                    }
+                }
 
-          if (targetConstructor == null) {
-                 throw new RuntimeException("找不到合适的 TestInput 构造函数");
-             }
+                if (targetConstructor == null) {
+                    throw new RuntimeException("找不到合适的 TestInput 构造函数");
+                }
 
-             targetConstructor.setAccessible(true);
-          return (Input) targetConstructor.newInstance(clonedValues);
+                targetConstructor.setAccessible(true);
+                return (Input) targetConstructor.newInstance(clonedValues);
 
             } catch (Exception e) {
                 // 如果克隆失败，打印错误信息并返回原对象
-             System.err.println("cloneInput 失败：" + e.getMessage());
-              e.printStackTrace();
-              return input;
+                System.err.println("cloneInput 失败：" + e.getMessage());
+                e.printStackTrace();
+                return input;
             }
         }
 
         // 其他类型直接返回原对象
-      return input;
+        return input;
     }
 
     /**
      * 判断是否是 ListNode 类型
      */
-  private boolean isListNode(Object obj) {
+    private boolean isListNode(Object obj) {
         String className = obj.getClass().getSimpleName();
-      return "ListNode".equals(className);
+        return "ListNode".equals(className);
     }
 
     /**
@@ -233,7 +233,7 @@ public class JudgeEngine<Input, Output> {
      */
     @SuppressWarnings("unchecked")
     private Object cloneListNode(Object node) throws Exception {
-       if (node == null) return null;
+        if (node == null) return null;
 
         // 获取节点类信息
         Class<?> nodeClass = node.getClass();
@@ -243,21 +243,21 @@ public class JudgeEngine<Input, Output> {
         nextField.setAccessible(true);
 
         // 创建虚拟头节点
-       java.lang.reflect.Constructor<?> intConstructor = nodeClass.getDeclaredConstructor(int.class);
-       intConstructor.setAccessible(true);
-     Object dummy = intConstructor.newInstance(0);
-     Object curr = dummy;
+        java.lang.reflect.Constructor<?> intConstructor = nodeClass.getDeclaredConstructor(int.class);
+        intConstructor.setAccessible(true);
+        Object dummy = intConstructor.newInstance(0);
+        Object curr = dummy;
 
         // 遍历原链表并复制每个节点
-     Object src = node;
-       while (src != null) {
-           int val = (int) valField.get(src);
-         Object newNode = intConstructor.newInstance(val);
-           nextField.set(curr, newNode);
-           curr = newNode;
-           src = nextField.get(src);
-       }
+        Object src = node;
+        while (src != null) {
+            int val = (int) valField.get(src);
+            Object newNode = intConstructor.newInstance(val);
+            nextField.set(curr, newNode);
+            curr = newNode;
+            src = nextField.get(src);
+        }
 
-      return nextField.get(dummy);
+        return nextField.get(dummy);
     }
 }

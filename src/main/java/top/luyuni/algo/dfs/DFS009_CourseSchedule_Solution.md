@@ -214,6 +214,7 @@ dfs(0):
 ## 边界 Case
 
 **Case 1: 无先修关系**
+
 ```
 numCourses=3, prerequisites=[]
 所有课程独立，可以完成
@@ -221,6 +222,7 @@ numCourses=3, prerequisites=[]
 ```
 
 **Case 2: 单课程自环**
+
 ```
 numCourses=1, prerequisites=[[0,0]]
 课程0依赖自己，有环
@@ -228,6 +230,7 @@ numCourses=1, prerequisites=[[0,0]]
 ```
 
 **Case 3: 长链无环**
+
 ```
 numCourses=4, prerequisites=[[1,0],[2,1],[3,2]]
 0→1→2→3，无环
@@ -235,6 +238,7 @@ numCourses=4, prerequisites=[[1,0],[2,1],[3,2]]
 ```
 
 **Case 4: 多个独立链**
+
 ```
 numCourses=4, prerequisites=[[1,0],[3,2]]
 0→1 和 2→3，两个独立链

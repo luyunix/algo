@@ -138,18 +138,21 @@ public ListNode middleNodeFirst(ListNode head) {
 ## 边界 Case
 
 **Case 1: 空链表**
+
 ```
 head = null
 直接返回null ✓
 ```
 
 **Case 2: 单个节点**
+
 ```
 head = [1]
 fast.next == null，直接返回1 ✓
 ```
 
 **Case 3: 两个节点**
+
 ```
 head = [1,2]
 fast: 1 → null

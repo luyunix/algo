@@ -5,6 +5,7 @@
 ## 为什么学栈？
 
 栈是解决「对称性问题」和「延迟处理」的神器：
+
 - 括号匹配（编译器基础）
 - 表达式求值（计算器实现）
 - 浏览器前进后退
@@ -222,17 +223,17 @@ int factorial(int n) {
 
 ## 当前内容
 
-| 文件 | 题目 | 难度 | 核心技巧 |
-|------|------|------|----------|
-| `ZHAN001_ValidParentheses.java` | 有效的括号 | 入门 | 栈匹配 |
-| `ZHAN002_MinStack.java` | 最小栈 | 入门 | 辅助栈 |
-| `ZHAN003_DailyTemperatures.java` | 每日温度 | 中等 | 单调栈 |
-| `ZHAN004_NextGreaterElement.java` | 下一个更大元素I | 中等 | 单调栈 |
-| `ZHAN005_LargestRectangle.java` | 柱状图中最大的矩形 | 困难 | 单调栈 |
-| `ZHAN006_EvaluateReversePolish.java` | 逆波兰表达式求值 | 中等 | 栈计算 |
-| `ZHAN007_ImplementQueueUsingStacks.java` | 用栈实现队列 | 入门 | 双栈（输入+输出） |
-| `ZHAN008_DecodeString.java` | 字符串解码 | 中等 | 双栈 |
-| `ZHAN009_SimplifyPath.java` | 简化路径 | 中等 | 栈处理 |
+| 文件                                       | 题目        | 难度 | 核心技巧      |
+|------------------------------------------|-----------|----|-----------|
+| `ZHAN001_ValidParentheses.java`          | 有效的括号     | 入门 | 栈匹配       |
+| `ZHAN002_MinStack.java`                  | 最小栈       | 入门 | 辅助栈       |
+| `ZHAN003_DailyTemperatures.java`         | 每日温度      | 中等 | 单调栈       |
+| `ZHAN004_NextGreaterElement.java`        | 下一个更大元素I  | 中等 | 单调栈       |
+| `ZHAN005_LargestRectangle.java`          | 柱状图中最大的矩形 | 困难 | 单调栈       |
+| `ZHAN006_EvaluateReversePolish.java`     | 逆波兰表达式求值  | 中等 | 栈计算       |
+| `ZHAN007_ImplementQueueUsingStacks.java` | 用栈实现队列    | 入门 | 双栈（输入+输出） |
+| `ZHAN008_DecodeString.java`              | 字符串解码     | 中等 | 双栈        |
+| `ZHAN009_SimplifyPath.java`              | 简化路径      | 中等 | 栈处理       |
 
 ## 栈学习建议
 

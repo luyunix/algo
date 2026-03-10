@@ -251,6 +251,7 @@ peek/pop: 均摊O(1)
 ## 边界 Case
 
 **Case 1: 连续push后连续pop**
+
 ```
 push(1), push(2), push(3)
 pop(), pop(), pop()
@@ -264,6 +265,7 @@ pop3: 直接弹出3，输出[]
 ```
 
 **Case 2: push和pop交替**
+
 ```
 push(1), pop(), push(2), pop()
 
@@ -276,6 +278,7 @@ pop(): 输出空，倒栈→输出[2]，弹出2
 ```
 
 **Case 3: 空队列操作**
+
 ```
 empty() → true
 peek() 或 pop() 应该抛出异常

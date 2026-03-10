@@ -290,10 +290,10 @@ private void dfs(int[][] isConnected, boolean[] visited, int city) {
 
 ## 两种方法对比
 
-| 方法 | 时间复杂度 | 空间复杂度 | 适用场景 |
-|------|-----------|-----------|----------|
-| 并查集 | O(n² × α(n)) | O(n) | 动态连通性，需要频繁合并查询 |
-| DFS | O(n²) | O(n) | 一次性遍历所有连通分量 |
+| 方法  | 时间复杂度        | 空间复杂度 | 适用场景           |
+|-----|--------------|-------|----------------|
+| 并查集 | O(n² × α(n)) | O(n)  | 动态连通性，需要频繁合并查询 |
+| DFS | O(n²)        | O(n)  | 一次性遍历所有连通分量    |
 
 注：α(n) 是阿克曼函数的反函数，可以认为是一个很小的常数（< 5）
 
@@ -306,6 +306,7 @@ private void dfs(int[][] isConnected, boolean[] visited, int city) {
 **作用**：查找时把节点直接挂到根，下次查找更快
 
 **代码**：
+
 ```java
 public int find(int x) {
     if (parent[x] != x) {
@@ -320,6 +321,7 @@ public int find(int x) {
 **作用**：把小树挂到大树下，控制树的高度
 
 **代码**：
+
 ```java
 public void union(int x, int y) {
     int px = find(x), py = find(y);

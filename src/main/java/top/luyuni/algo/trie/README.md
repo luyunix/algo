@@ -5,6 +5,7 @@
 ## 为什么学 Trie？
 
 Trie 树是解决「字符串前缀匹配」问题的神器：
+
 - 自动补全（搜索框提示）
 - 拼写检查
 - IP 路由最长前缀匹配
@@ -248,15 +249,15 @@ i f l v
 
 ## 当前内容
 
-| 文件 | 题目 | 难度 | 核心技巧 |
-|------|------|------|----------|
-| `TRIE001_ImplementTrie.java` | 实现 Trie 前缀树 | 中等 | Trie 基础 |
-| `TRIE002_WordSearchII.java` | 单词搜索 II | 困难 | Trie + DFS |
-| `TRIE003_LongestCommonPrefix.java` | 最长公共前缀 | 简单 | Trie 或横向扫描 |
-| `TRIE004_AddAndSearchWord.java` | 添加与搜索单词 | 中等 | Trie + 通配符 |
-| `TRIE005_MapSumPairs.java` | 键值映射 | 中等 | Trie 节点存值 |
-| `TRIE006_ReplaceWords.java` | 单词替换 | 中等 | Trie 前缀替换 |
-| `TRIE007_MaximumXOR.java` | 数组中两个数的最大异或值 | 中等 | Trie + 位运算 |
+| 文件                                 | 题目           | 难度 | 核心技巧       |
+|------------------------------------|--------------|----|------------|
+| `TRIE001_ImplementTrie.java`       | 实现 Trie 前缀树  | 中等 | Trie 基础    |
+| `TRIE002_WordSearchII.java`        | 单词搜索 II      | 困难 | Trie + DFS |
+| `TRIE003_LongestCommonPrefix.java` | 最长公共前缀       | 简单 | Trie 或横向扫描 |
+| `TRIE004_AddAndSearchWord.java`    | 添加与搜索单词      | 中等 | Trie + 通配符 |
+| `TRIE005_MapSumPairs.java`         | 键值映射         | 中等 | Trie 节点存值  |
+| `TRIE006_ReplaceWords.java`        | 单词替换         | 中等 | Trie 前缀替换  |
+| `TRIE007_MaximumXOR.java`          | 数组中两个数的最大异或值 | 中等 | Trie + 位运算 |
 
 ## Trie 学习建议
 

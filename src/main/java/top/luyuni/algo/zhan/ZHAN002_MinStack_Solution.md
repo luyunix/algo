@@ -169,6 +169,7 @@ push(-2), push(0), push(-3), getMin(), pop(), top(), getMin()
 ## 边界 Case
 
 **Case 1: 重复最小值**
+
 ```
 push(0), push(0), getMin(), pop(), getMin()
 
@@ -180,6 +181,7 @@ getMin(): 0 ✓
 ```
 
 **Case 2: 递减序列**
+
 ```
 push(3), push(2), push(1)
 
@@ -188,6 +190,7 @@ push(3), push(2), push(1)
 ```
 
 **Case 3: 递增序列**
+
 ```
 push(1), push(2), push(3)
 

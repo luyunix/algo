@@ -255,12 +255,14 @@ startsWith("app") → true（"app"是前缀）
 ## 边界 Case
 
 **Case 1: 空字符串**
+
 ```
 insert("")
 search("") → true（根节点的isEndOfWord）
 ```
 
 **Case 2: 重复插入**
+
 ```
 insert("a")
 insert("a")
@@ -269,12 +271,14 @@ search("a") → true
 ```
 
 **Case 3: 查找不存在的单词**
+
 ```
 insert("apple")
 search("apply") → false（走到'p'后，'l'≠'p'）
 ```
 
 **Case 4: 前缀不存在**
+
 ```
 insert("apple")
 startsWith("bpple") → false（第一个字符就不匹配）

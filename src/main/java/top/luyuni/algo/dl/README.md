@@ -5,6 +5,7 @@
 ## 为什么学队列？
 
 队列是解决「公平调度」和「广度优先搜索」的神器：
+
 - 任务调度（CPU调度、线程池）
 - BFS广度优先搜索（图的层序遍历）
 - 缓存实现（LRU）
@@ -216,16 +217,16 @@ pop()：
 
 ## 当前内容
 
-| 文件 | 题目 | 难度 | 核心技巧 |
-|------|------|------|----------|
-| `DL001_ImplementStackUsingQueues.java` | 用队列实现栈 | 入门 | 双队列 |
-| `DL002_ImplementQueueUsingStacks.java` | 用栈实现队列 | 入门 | 双栈 |
-| `DL003_BinaryTreeLevelOrder.java` | 二叉树的层序遍历 | 入门 | BFS |
-| `DL004_SlidingWindowMaximum.java` | 滑动窗口最大值 | 困难 | 单调队列 |
-| `DL005_DesignCircularQueue.java` | 设计循环队列 | 中等 | 数组+指针 |
-| `DL006_NumberOfIslands.java` | 岛屿数量 | 中等 | BFS |
-| `DL007_RottingOranges.java` | 腐烂的橘子 | 中等 | BFS+多源 |
-| `DL008_CourseSchedule.java` | 课程表 | 中等 | 拓扑排序（Kahn算法） |
+| 文件                                     | 题目       | 难度 | 核心技巧         |
+|----------------------------------------|----------|----|--------------|
+| `DL001_ImplementStackUsingQueues.java` | 用队列实现栈   | 入门 | 双队列          |
+| `DL002_ImplementQueueUsingStacks.java` | 用栈实现队列   | 入门 | 双栈           |
+| `DL003_BinaryTreeLevelOrder.java`      | 二叉树的层序遍历 | 入门 | BFS          |
+| `DL004_SlidingWindowMaximum.java`      | 滑动窗口最大值  | 困难 | 单调队列         |
+| `DL005_DesignCircularQueue.java`       | 设计循环队列   | 中等 | 数组+指针        |
+| `DL006_NumberOfIslands.java`           | 岛屿数量     | 中等 | BFS          |
+| `DL007_RottingOranges.java`            | 腐烂的橘子    | 中等 | BFS+多源       |
+| `DL008_CourseSchedule.java`            | 课程表      | 中等 | 拓扑排序（Kahn算法） |
 
 ## 队列学习建议
 

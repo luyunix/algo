@@ -186,18 +186,21 @@ merge(1→2→4, 1→3→4)
 ## 边界 Case
 
 **Case 1: 都为空**
+
 ```
 list1 = null, list2 = null
 返回 null ✓
 ```
 
 **Case 2: 一个为空**
+
 ```
 list1 = null, list2 = 1→2→3
 返回 1→2→3 ✓
 ```
 
 **Case 3: 有负数**
+
 ```
 list1 = -5→-3→0, list2 = -2→1
 返回 -5→-3→-2→0→1 ✓

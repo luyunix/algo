@@ -151,12 +151,14 @@ hasPathSum(5, 22)
 ## 边界 Case
 
 **Case 1: 空树**
+
 ```
 root = null
 返回false ✓
 ```
 
 **Case 2: 只有根节点，且值等于targetSum**
+
 ```
     5
 targetSum = 5
@@ -164,6 +166,7 @@ targetSum = 5
 ```
 
 **Case 3: 只有根节点，值不等于targetSum**
+
 ```
     5
 targetSum = 3
@@ -171,6 +174,7 @@ targetSum = 3
 ```
 
 **Case 4: 没有满足条件的路径**
+
 ```
     1
    / \
@@ -183,6 +187,7 @@ targetSum = 10
 ```
 
 **Case 5: 负数情况**
+
 ```
     -2
    /

@@ -25,9 +25,23 @@ public class TestCase<Input, Output> {
         this.customEquals = customEquals;
     }
 
-    public String getName() { return name; }
-    public Input getInput() { return input; }
-    public Output getExpectedOutput() { return expectedOutput; }
-    public String getDescription() { return description; }
-    public BiPredicate<Output, Output> getCustomEquals() { return customEquals; }
+    public String getName() {
+        return name;
+    }
+
+    public Input getInput() {
+        return input;
+    }
+
+    public Output getExpectedOutput() {
+        return expectedOutput;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public BiPredicate<Output, Output> getCustomEquals() {
+        return customEquals;
+    }
 }

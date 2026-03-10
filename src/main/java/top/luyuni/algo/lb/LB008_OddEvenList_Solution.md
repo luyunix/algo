@@ -242,12 +242,14 @@ even.next != null：
 ## 边界 Case
 
 **Case 1: 空链表**
+
 ```
 head = null
 返回null ✓
 ```
 
 **Case 2: 只有一个节点**
+
 ```
 1
 odd=1, even=null
@@ -257,6 +259,7 @@ odd.next = evenHead = null
 ```
 
 **Case 3: 只有两个节点**
+
 ```
 1 → 2
 odd=1, even=2
@@ -266,6 +269,7 @@ odd.next = evenHead = 2
 ```
 
 **Case 4: 偶数长度**
+
 ```
 1 → 2 → 3 → 4
 结果：1 → 3 → 2 → 4 ✓
