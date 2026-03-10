@@ -15,8 +15,8 @@ public class TestCase<Input, Output> {
     public TestCase(String name, Input input, Output expectedOutput, String description) {
         this(name, input, expectedOutput, description, null);
     }
-    
-    public TestCase(String name, Input input, Output expectedOutput, String description, 
+
+    public TestCase(String name, Input input, Output expectedOutput, String description,
                     BiPredicate<Output, Output> customEquals) {
         this.name = name;
         this.input = input;

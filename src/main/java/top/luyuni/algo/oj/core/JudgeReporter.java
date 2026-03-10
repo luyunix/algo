@@ -6,18 +6,18 @@ import java.util.List;
  * 判题结果报告
  */
 public class JudgeReporter {
-    
+
     /**
      * 打印简单的测试报告（不带题目名称）- AC 时也显示完整信息
      */
  public static void printReport(List<JudgeResult> results) {
     int passed = 0;
     int total = results.size();
-        
+
     for (int i = 0; i < results.size(); i++) {
            JudgeResult r = results.get(i);
        System.out.printf("测试 #%d: %s - ", i +1, r.getTestCaseName());
-           
+
          if (r.getStatus() == JudgeResult.Status.AC) {
               passed++;
           System.out.println(GREEN + "✓ AC" + RESET + " (" + r.getTimeMs() + "ms)");
@@ -45,7 +45,7 @@ public class JudgeReporter {
            }
           }
       }
-      
+
    System.out.println("----------------------------------------");
    System.out.printf("结果：%d/%d 通过", passed, total);
      if (passed == total) {
@@ -54,21 +54,21 @@ public class JudgeReporter {
       System.out.println(RED + BOLD + " ✗ FAILED" + RESET);
       }
   }
-  
+
  public static void report(String problemName, List<JudgeResult> results) {
     System.out.println("========================================");
     System.out.println("题目：" + problemName);
     System.out.println("========================================\n");
-        
+
    int passed = 0;
    int total = results.size();
        long totalTime = 0;
-        
+
    for (int i = 0; i < results.size(); i++) {
            JudgeResult r = results.get(i);
        System.out.printf("测试用例 #%d: %s\n", i + 1, r.getTestCaseName());
        System.out.println("状态：" + formatStatus(r.getStatus()));
-           
+
          if (r.getStatus() == JudgeResult.Status.AC) {
               passed++;
           System.out.println("耗时：" + r.getTimeMs() + "ms");
@@ -88,7 +88,7 @@ public class JudgeReporter {
         }
        System.out.println();
       }
-      
+
    System.out.println("----------------------------------------");
    System.out.printf("结果：%d/%d 通过", passed, total);
      if (passed == total) {
@@ -119,7 +119,7 @@ private static String formatStatus(JudgeResult.Status status) {
           default: return status.name();
       }
   }
-  
+
   /**
    * 格式化值（支持数组和复杂对象）
    */
@@ -127,7 +127,7 @@ private static String formatValue(Object value) {
  if (value == null) {
  return "null";
   }
-  
+
  // 处理 int[] 数组
  if (value instanceof int[]) {
   int[] arr = (int[]) value;
@@ -151,7 +151,7 @@ private static String formatValue(Object value) {
   sb.append("]");
  return sb.toString();
  }
- 
+
  // 处理 char[][] 二维数组
  if (value instanceof char[][]) {
   char[][] arr = (char[][]) value;
@@ -168,31 +168,31 @@ private static String formatValue(Object value) {
   sb.append("]");
  return sb.toString();
  }
-  
+
  // 处理 ListNode 链表
  if (value != null && "ListNode".equals(value.getClass().getSimpleName())) {
   try {
   java.lang.reflect.Field nextField = value.getClass().getDeclaredField("next");
   nextField.setAccessible(true);
-  
+
   StringBuilder sb = new StringBuilder("[");
   Object curr = value;
   boolean first = true;
   java.util.Set<Object> visited = new java.util.HashSet<>(); // 检测环
-  
+
  while (curr != null && !visited.contains(curr)) {
  if (!first) sb.append(",");
   first = false;
   visited.add(curr); // 标记已访问
-  
+
   // 获取 val 字段
   java.lang.reflect.Field valField = curr.getClass().getDeclaredField("val");
   valField.setAccessible(true);
  sb.append(valField.get(curr));
-  
+
   curr = nextField.get(curr);
  }
- 
+
  if (curr != null) {
  sb.append(" (有环)");
  }
@@ -204,31 +204,31 @@ return sb.toString();
   // 如果反射失败，返回默认 toString
   }
  }
-  
+
  // 处理 TestInput（包含链表等字段）
  if (value.getClass().getName().contains("TestInput")) {
   try {
   java.lang.reflect.Field[] fields = value.getClass().getDeclaredFields();
   StringBuilder sb = new StringBuilder();
   boolean first = true;
-  
+
   for (java.lang.reflect.Field field : fields) {
    field.setAccessible(true);
   Object fieldValue = field.get(value);
-   
+
   if (!first) sb.append(", ");
    first = false;
-   
+
    sb.append(field.getName()).append("=");
    sb.append(formatValue(fieldValue));
   }
-  
+
  return sb.toString();
   } catch (Exception e) {
   // 如果反射失败，返回默认 toString
   }
  }
- 
+
  // 处理 Node 带随机指针的链表
  if (value != null && "Node".equals(value.getClass().getSimpleName())) {
   try {
@@ -238,36 +238,36 @@ return sb.toString();
    randomField.setAccessible(true);
    java.lang.reflect.Field valField = value.getClass().getDeclaredField("val");
    valField.setAccessible(true);
-   
+
    StringBuilder sb = new StringBuilder("[");
    Object curr = value;
    boolean first = true;
    java.util.Set<Object> visited = new java.util.HashSet<>(); // 检测环
-   
+
    while (curr != null && !visited.contains(curr)) {
    if (!first) sb.append("], [");
     first = false;
     visited.add(curr); // 标记已访问
-    
+
     // 获取 val 和 random
     int val = (int) valField.get(curr);
     Object random = randomField.get(curr);
     String randomStr = (random != null) ? String.valueOf(valField.get(random)) : "null";
-    
+
     sb.append(val).append(",").append(randomStr);
-    
+
     curr = nextField.get(curr);
    }
-   
+
    sb.append("]");
-   
+
   return sb.toString();
-   
+
   } catch (Exception e) {
    // 如果反射失败，返回默认 toString
   }
  }
- 
+
  // 处理 TreeNode 二叉树
  if (value != null && "TreeNode".equals(value.getClass().getSimpleName())) {
   try {
@@ -277,12 +277,12 @@ return sb.toString();
    rightField.setAccessible(true);
    java.lang.reflect.Field valField = value.getClass().getDeclaredField("val");
    valField.setAccessible(true);
-   
+
    // 层序遍历打印二叉树
    StringBuilder sb = new StringBuilder();
    java.util.Queue<Object> queue = new java.util.LinkedList<>();
    queue.offer(value);
-   
+
    while (!queue.isEmpty()) {
     int size = queue.size();
     sb.append("[");
@@ -305,14 +305,14 @@ return sb.toString();
     sb.append("]");
     if (!queue.isEmpty()) sb.append(", ");
    }
-   
+
   return sb.toString();
-   
+
   } catch (Exception e) {
    // 如果反射失败，返回默认 toString
   }
  }
- 
+
  // 处理 boolean[] 数组
  if (value instanceof boolean[]) {
         boolean[] arr = (boolean[]) value;
@@ -340,7 +340,7 @@ return sb.toString();
      sb.append("]");
   return sb.toString();
     }
-    
+
  return String.valueOf(value);
 }
 

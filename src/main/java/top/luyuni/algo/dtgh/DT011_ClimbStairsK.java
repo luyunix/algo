@@ -61,7 +61,7 @@ public class DT011_ClimbStairsK {
         if (N == 0) return 1;
         int[] dp = new int[N + 1];
         dp[0] = 1;
-        
+
         // 维护一个滑动窗口的和
         int windowSum = 0;
         for (int i = 1; i <= N; i++) {
@@ -75,12 +75,12 @@ public class DT011_ClimbStairsK {
         }
         return dp[N];
     }
-    
+
     // 方法 3：给定步长集合的版本
   public int climbStairsWithSet(int N, int[] steps) {
         int[] dp = new int[N + 1];
         dp[0] = 1;
-        
+
         for (int i = 1; i <= N; i++) {
             for (int step : steps) {
                 if (i - step >= 0) {

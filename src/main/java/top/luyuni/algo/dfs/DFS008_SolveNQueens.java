@@ -10,7 +10,7 @@ import java.util.*;
  * DFS008 - N 皇后
  */
 public class DFS008_SolveNQueens {
-    
+
  public List<List<String>> solveNQueens(int n) {
     List<List<String>> result = new ArrayList<>();
    char[][] board = new char[n][n];
@@ -18,13 +18,13 @@ public class DFS008_SolveNQueens {
    backtrack(board, 0, result);
  return result;
     }
-    
+
  private void backtrack(char[][] board, int row, List<List<String>> result) {
     if (row == board.length) {
       result.add(construct(board));
      return;
      }
-    
+
    for (int col = 0; col < board.length; col++) {
      if (!isValid(board, row, col)) continue;
      board[row][col] = 'Q';
@@ -32,7 +32,7 @@ public class DFS008_SolveNQueens {
      board[row][col] = '.';
      }
     }
-    
+
  private boolean isValid(char[][] board, int row, int col) {
     int n = board.length;
    // 检查列
@@ -49,7 +49,7 @@ public class DFS008_SolveNQueens {
    }
  return true;
     }
-    
+
  private List<String> construct(char[][] board) {
     List<String> res = new ArrayList<>();
    for (char[] row : board) {
@@ -57,20 +57,20 @@ public class DFS008_SolveNQueens {
    }
  return res;
     }
-    
+
  public static void main(String[] args) {
     DFS008_SolveNQueens solution = new DFS008_SolveNQueens();
-    
+
     JudgeEngine<Integer, Integer> engine = new JudgeEngine<>();
   engine.addTestCase("n=4", 4, 2, "4 皇后有 2 个解")
         .addTestCase("n=1", 1, 1, "1 皇后只有 1 个解");
-    
+
    System.out.println("=== N 皇后测试 ===");
-   List<JudgeResult> results = engine.judge(input -> 
+   List<JudgeResult> results = engine.judge(input ->
          solution.solveNQueens(input).size()
      );
     JudgeReporter.printReport(results);
-    
+
    boolean allPassed = results.stream().allMatch(JudgeResult::isAccepted);
   System.exit(allPassed ? 0 : 1);
     }
